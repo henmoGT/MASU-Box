@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASU Box - 你的校园生活百宝箱</title>
+    <style>
+        /* 定义日夜模式的 CSS 变量（为以后做双模式切换打好基础） */
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-sub: #6c757d;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --accent-color: #007aff;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 预留暗色模式变量（未来可以通过给 html 加 class="dark" 来瞬间切换） */
+        html.dark {
+            --bg-color: #121212;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --text-main: #ffffff;
+            --text-sub: #888888;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-color: #007aff;
+            --card-shadow: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        /* 顶部导航 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: var(--accent-color);
+        }
+        /* 核心首屏区 */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            margin-bottom: 40px;
+        }
+        /* 下载按钮样式 */
+        .download-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 14px 36px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        /* 功能特性卡片区 */
+        .features {
+            max-width: 1000px;
+            margin: 50px auto 100px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 122, 255, 0.5);
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-sub);
+            font-size: 13px;
+            border-top: 1px solid var(--border-color);
+        }
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶栏 -->
+    <header>
+        <div class="logo">MASU <span>Box</span></div>
+        <div style="font-size: 14px; color: var(--text-sub);">校园实用聚合工具</div>
+    </header>
+
+    <!-- 主介绍区 -->
+    <section class="hero">
+        <h1>MASU <span>Box</span></h1>
+        <p>告别繁琐切换，汇聚校园高频刚需。集成校园地图、扫码快捷入口、校园网一键登录与校园卡查询等一站式服务。</p>
+        <!-- 蓝奏云高速下载链接 -->
+        <a href="https://henmo.lanzout.com/b00l33ogkj" target="_blank" class="download-btn">蓝奏云高速下载</a>
+    </section>
+
+    <!-- 功能亮点展示 -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>🌐 校园网一键登录</h3>
+            <p>告别每次连网都要手动输密码、弹网页的繁琐流程，一键快速认证联网，省时省力。</p>
+        </div>
+        <div class="feature-card">
+            <h3>🗺️ 校园地图导航</h3>
+            <p>基于学校官方地图适配，融合算法实时定位，随时随地掌握自己的校园坐标，出行更轻松。</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚡ 快捷生活聚合</h3>
+            <p>校园卡充值、扫码出入、快递一键查询、课程查询，将高频实用工具集成于一个指尖页面。</p>
+        </div>
+        <div class="feature-card">
+            <h3>✨ 现代轻量体验</h3>
+            <p>界面清爽无广告，轻量且丝滑，后续还将支持日夜双模式切换，全天候守护你的视觉体验。</p>
+        </div>
+    </section>
+
+    <!-- 底部下载锚点区域 -->
+    <div style="text-align: center; padding: 20px 0 60px 0;">
+        <a href="https://henmo.lanzout.com/b00l33ogkj" target="_blank" class="download-btn">Android 安装包下载</a>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2026 MASU Box Project. Designed for Campus Life.</p>
+    </footer>
+
+</body>
+</html>
