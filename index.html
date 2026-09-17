@@ -1,191 +1,3 @@
->
-<超文本标记语言 朗="zh-CN">html lang="zh-CN">
-<头>头>
-<元 字符集="UTF-8"><元 字符集="UTF-8">
-<元名称=“视口”内容=“宽度=设备宽度，初始比例=1.0”><元 姓名="视口" 内容="宽度=设备宽度，初始比例=1.0">
-<标题>MASU盒-你的校园生活百宝箱</标题><标题>masu盒-你的校园生活百宝箱</标题>
-<风格><风格>风格>
-        /* 定义日夜模式的 CSS 变量（为以后做双模式切换打好基础） *//* 定义日夜模式的 CSS 变量（为以后做双模式切换打好基础） *//* 定义日夜模式的 CSS 变量（为以后做双模式切换打好基础） *//* 定义日夜模式的 CSS 变量（为以后做双模式切换打好基础） */
-：根{根{{根{
---bg-color：#f8f9fa；--bg-color：#f8f9fa；#f8f9fa；--bg-color：#f8f9fa；
---card-bg：#fffff；--card-bg：#fffff；#FFFF；--card-bg：#fffff；
---text-main：#212529；--text-main：#212529;#212529；--text-main: #212529;
---text-sub：#6c757d；--text-sub：#6c757d；#6c757d；--text-sub：#6c757d；
---border-color:rgba(0，0，0，0.08)；--border-color: rgba(0, 0, 0, 0.08);:rgba(0，0，0，0.08)；--border-color: rgba(0, 0, 0, 0.08);
-            --accent-color: #007aff;--accent-color：#007aff；--accent-color：#007aff；--accent-color：#007aff；
---card-shadow:04px 20px rgba(0，0，0，0.05)；--card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);:04px 20px rgba(0，0，0，0.05)；--card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-/*预留暗色模式变量(未来可以通过给html加class="dark"来瞬间切换)*//*预留暗色模式变量(未来可以通过给html加class="深色"来瞬间切换）*//*预留暗色模式变量(未来可以通过给html加class="dark"来瞬间切换）*/
-html.dark{html.dark{.Dark{html.dark{
---bg-color：#121212；--bg-color：#121212;#121212；--bg-color: #121212;
---card-bg:rgba(255，255，255，0.04)；--card-bg: rgba(255, 255, 255, 0.04);:rgba(255，255，255，0.04)；--card-bg: rgba(255, 255, 255, 0.04);
---text-main：#FFFF；--text-main: #ffffff;#FFFF；--text-main: #ffffff;
---text-sub：#888888；--text-sub：#888888；#888888；--text-sub：#888888；
---border-color:rgba(255，255，255，0.08)；--border-color: rgba(255, 255, 255, 0.08);:rgba(255，255，255，0.08)；--border-color: rgba(255, 255, 255, 0.08);
-            --accent-color: #007aff;--accent-color: #007aff;--accent-color: #007aff;--accent-color: #007aff;
---卡片阴影：无；--卡影：无；：没有一个；
-        }
-
-* {{{{
-页距：0；页距：0；：0；
-填充：0；填充：0；: 0;
-框大小：边框框；框大小：边框框；：边框框；
-填充：0；填充：0；.3s缓和，颜色0.3s缓和；transition:background-color0.3s ease，color0.3s ease；.3s缓和，颜色0.3s缓和；过渡：背景色0.3s缓和，颜色0.3s缓和；
-        }
-正文{body{{body{
-            background-color: var(--bg-color);background-color: var(--bg-color);
-颜色：var(--text-main)；颜色：var(--text-main)；
-字体系列：-苹果系统，BlinkMacSystemFont，"Segoe UI"，Roboto，Helvetica，Arial，无衬线；字体系列：-apple系统、BlinkMacSystemFont、“Segoe UI”、Roboto、Helvetica、Arial、无衬线；
-无衬线6；线高：1.6；
-overflow-x：隐藏；overflow-x：隐藏；
-}}
-/* 顶部导航 *//* 顶部导航 */
-页眉{header{
-显示：柔性；显示：柔性；
-justify-Content：间隔；justify-Content：间隔；
-对齐项：居中；对齐项目：中心；
-中心%；填充：20px8%；
-            border-bottom: 1px solid var(--border-color);border-bottom: 1px solid var(--border-color);
-}}
-.logo{logo{
-font-size:20px；font-size:20px；
-字体粗细：粗体；字体粗细: bold;
-字母间距：1px；letter-spacing:1px；
-}}
-.logo跨度{logo跨度{
-            color: var(--accent-color);color: var(--accent-color);
-}}
-/* 核心首屏区 *//* 核心首屏区 */
-.英雄{hero{
-文本对齐：居中；文本对齐：中心；
-填料：80px20px50px20px；填料：80px20px50px20px；
-最大宽度：800px；max-width:800px；
-PX:0自动；余量：0自动；
-}}
-.英雄h1{hero h1{
-font-size:42px；font-size:42px；
-底边距：20px；margin-bottom:20px；
-font-weight:800；font-weight:800；
-}}
-.英雄h1跨度{英雄h1跨度{
-            color: var(--accent-color);color: var(--accent-color);
-}}
-.英雄P{hero p{
-字体大小：18px；font-size:18px；
-            color: var(--text-sub);color: var(--text-sub);
-底边距：40px；margin-bottom:40px；
-}}
-/*下载按∥样式*//* 下载按钮样式 */
-.download-btn{download-btn{
-显示：内联块；显示：内联块；
-背景颜色：var(--cent-color)；背景色：var(--cent-color)；
-颜色：#FFFFFF；颜色：#fffff；
-填充：14px36px；padding:14px36px；
-字体大小：16px；font-size:16px；
-font-weight:600；font-weight:600；
-边界半径：30px；border-radius:30px；
-文字修饰：无；文字装饰：没有一个；
-px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
-过渡：所有0.3s轻松；过渡：所有0.3s轻松；
-}}
-.download-btn：悬停{
-不透明度：0.9；
-变换：translateY(-2px)；
-        }
-        /* 功能特性卡片区 */
-        .features {
-超文本标记语言
-<
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 122, 255, 0.5);
-        }
-        .feature-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--text-main);
-        }
-        .feature-card p {
-            color: var(--text-sub);
-            font-size: 14px;
-        }
-        /* 页脚 */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-sub);
-            font-size: 13px;
-            border-top: 1px solid var(--border-color);
-        }
-        /* 响应式微调 */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 16px; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- 顶栏 -->
-    <header>
-        <div class="logo">MASU <span>Box</span></div>
-        <div style="font-size: 14px; color: var(--text-sub);">校园实用聚合工具</div>
-    </header>
-
-    <!-- 主介绍区 -->
-    <section class="hero">
-        <h1>MASU <span>Box</span></h1>
-        <p>告别繁琐切换，汇聚校园高频刚需。集成校园地图、扫码快捷入口、校园网一键登录与校园卡查询等一站式服务。</p>
-        <!-- 蓝奏云高速下载链接 -->
-        <a href="https://henmo.lanzout.com/b00l33ogkj" target="_blank" class="download-btn">蓝奏云高速下载</a>
-    </section>
-
-    <!-- 功能亮点展示 -->
-    <section class="features">
-        <div class="feature-card">
-            <h3>🌐 校园网一键登录</h3>
-            <p>告别每次连网都要手动输密码、弹网页的繁琐流程，一键快速认证联网，省时省力。</p>
-        </div>
-        <div class="feature-card">
-            <h3>🗺️ 校园地图导航</h3>
-            <p>基于学校官方地图适配，融合算法实时定位，随时随地掌握自己的校园坐标，出行更轻松。</p>
-        </div>
-        <div class="feature-card">
-            <h3>⚡ 快捷生活聚合</h3>
-            <p>校园卡充值、扫码出入、快递一键查询、课程查询，将高频实用工具集成于一个指尖页面。</p>
-        </div>
-        <div class="feature-card">
-            <h3>✨ 现代轻量体验</h3>
-            <p>界面清爽无广告，轻量且丝滑，后续还将支持日夜双模式切换，全天候守护你的视觉体验。</p>
-        </div>
-    </section>
-
-    <!-- 底部下载锚点区域 -->
-    <div style="text-align: center; padding: 20px 0 60px 0;">
-        <a href="https://henmo.lanzout.com/b00l33ogkj" target="_blank" class="download-btn">Android 安装包下载</a>
-    </div>
-
-    <!-- 页脚 -->
-    <footer>
-        <p>&copy; 2026 MASU Box Project. Designed for Campus Life.</p>
-    </footer>
-
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -198,58 +10,58 @@ px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255
             --bg-color: #f8f9fa;
             --card-bg: #ffffff;
             --text-main: #212529;
-            --text-sub: #6c757d;
-            --border-color: rgba(0, 0, 0, 0.08);
-            --accent-color: #007aff;
-            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+超文本标记语言--text-sub：#6c757d；
+            --边框颜色: RGBA(0, 0, 0, 0.08);
+            --cent-color：#007aff；
+            --卡片阴影: 0 4PX 20PX RGBA(0, 0, 0, 0.05);
         }
 
         /* 暗色模式变量 */
-        html.dark {
+        超文本标记语言.黑暗的 {
             --bg-color: #121212;
-            --card-bg: rgba(255, 255, 255, 0.04);
-            --text-main: #ffffff;
+            --card-bg: RGBA(255, 255, 255, 0.04);
+            --text-main：#ffffff；
             --text-sub: #888888;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --accent-color: #007aff;
-            --card-shadow: none;
+            --边框颜色: RGBA(255, 255, 255, 0.08);
+            --cent-color：#007aff；
+            --卡片阴影: 没有一个;
         }
 
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            边缘: 0;
+            填充: 0;
+            箱体尺寸: 边框框;
+            过渡: 背景色 0.3s 缓解, 颜色 0.3s 缓解;
         }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+        身体 {
+            背景色: var(--bg-color);
+            颜色: var(--text-main);
+            字体系列: -apple-系统, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, 无衬线;
+            线高: 1.6;
+            overflow-x: 隐藏的;
         }
         /* 顶部导航 */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            border-bottom: 1px solid var(--border-color);
+        页眉 {
+            显示: 弯曲;
+            justify-content: 间距;
+            对齐项目: 中心;
+            填充: 20PX 8%;
+            下边框: 1PX 固体 var(--边框颜色);
         }
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 1px;
+        .标志 {
+            字体大小: 20PX;
+            字体粗细: 大胆的;
+            字母间距: 1PX;
         }
-        .logo span {
-            color: var(--accent-color);
+        .标志 跨度 {
+            颜色: var(--cent-color);
         }
         /* 核心首屏区 */
-        .hero {
-            text-align: center;
-            padding: 80px 20px 50px 20px;
-            max-width: 800px;
-            margin: 0 auto;
+        .英雄 {
+            文本对齐: 中心;
+            填充: 80PX 20PX 50PX 20PX;
+            最大宽度: 800PX;
+            边缘: 0 自动;
         }
         .英雄 H1 {
             字体大小: 42PX;
@@ -290,20 +102,20 @@ px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255
             颜色: var(--text-main);
             边境: 1PX 固体 var(--边框颜色);
             填充: 14PX 32PX;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 30px;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            字体大小: 16PX;
+            字体粗细: 600;
+            边界半径: 30PX;
+            文字装饰: 没有一个;
+            过渡: 所有 0.3s 缓解;
         }
-        .download-btn:hover, .github-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            border-color: var(--accent-color);
+        .download-btn:盘旋, .github-btn:盘旋 {
+            不透明度: 0.9;
+            改变: translateY(-2PX);
+            边框颜色: var(--cent-color);
         }
         /* 功能特性卡片区 */
-        .features {
-            max-width: 1000px;
+        .功能 {
+            最大宽度: 1000PX;
             边缘: 50PX 自动 80PX 自动;
             填充: 0 20PX;
             显示: 网格;
@@ -332,18 +144,18 @@ px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255
             字体大小: 14PX;
         }
         /* 开源致谢板块 */
-学分科        . {
+        .credits-section {
             max-width: 600px;
             margin: 0 auto 50px auto;
-<>20: ;<>20
+            padding: 20px;
             text-align: center;
             font-size: 14px;
             color: var(--text-sub);
-            border-top: 1px 虚线 var(--border-color);
+            border-top: 1px 虚线 var(--边框颜色);
         }
         .学分科 p {
             margin: 6px 0;
-        }
+< 超文本标记语言>(--边框颜色--边框颜色)；！doctype 超文本标记语言>html>！doctype！doctype<>}
         /* 页脚 */
         footer {
             text-align: center;
@@ -354,8 +166,8 @@ px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255
         }
         /* 响应式微调 */
         @media (max-width: 600px) {
-            .hero H1 { font-size: 32px; }
-            .hero p { font-size: 16px; }
+            .hero H1 {: 32PX}
+            .hero p { font-size: 16PX; }
         }
     </风格>
 </头>
@@ -379,7 +191,7 @@ px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255
         </div>
     </section>
 
-    <! -- 功能亮点展示 -->
+<! -- 功能亮点展示 -->
     <section 班级="功能">
         <div 班级="功能卡">
             <H3>🌐 校园网一键通</H3>
@@ -390,7 +202,7 @@ px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255
             <p>基于 传单.JS 深度定制，通过精准的多点多维度坐标映射算法，实现轻量级、丝滑的校园精准导览。</p>
         </div>
         <div 班级="功能卡">
-            <H3>🚀  聚合服务舱</H3>
+            <H3>🚀   聚合服务舱</H3>
             <p>高效聚合校园卡服务、扫码、共享单车一键开锁等日常刚需，真正做到即开即用、用完即走。</p>
         </div>
         <div 班级="功能卡">
@@ -407,7 +219,7 @@ px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255
         </div>
     </section>
 
-    <! -- 底部下载锚点区域 -->
+<! -- 底部下载锚点区域 -->
     <div 风格="文本对齐：居中；填充：10px040px0；">
         <a href="https://henmo.lanzout.com/b00l33ogkj" target="_blank" 班级="下载-btn">安卓安装包下载(蓝奏云)</a>
     </div>
@@ -421,8 +233,115 @@ px:04px 20px rgba(0，122，255，0.3)；box-shadow: 0 4px 20px rgba(0, 122, 255
 
     <!-- 页脚 -->
     <footer>
-        <p>&copy；2026MASU盒子项目。为校园生活设计。</p>
-    </footer>
+        <p>&copy；2026MASU盒子项目。为校园生活设计。</
+    </f页脚>
 
 </body>
-</html>
+</超文本标记语言
+上边框
+边框颜色：RGBA(0，122，255，0.5)；
+更改：translateY(-5PX)；
+.功能卡H3{
+字体大小：18px；
+底边距：12px；
+颜色：var(--text-main)；
+        }
+.功能卡{
+颜色：var(--text-sub)；
+字体大小：14px；
+        }
+/* 开源致谢板块 */
+/* 开源致谢板块 */
+最大宽度：600px；
+页边距：0自动50px自动；
+自动PX<自动
+            文字对齐： 中心；
+            字体大小： 14px；
+            颜色： var(--text-sub)；
+            上边框： 1px 虚线 var(--边框颜色)；
+        }
+        .学分科 p {
+            边缘： 6px 0;
+        }
+/*页脚*/
+页脚{
+页脚
+/* 页脚 */
+            color: var(--text-sub);
+font-size:13px；
+PX
+}
+/* 响应式微调 */
+@media(最大宽度：600px){
+.英雄H1{font-size:32px；}
+.英雄p{font-size:16px；}
+        }
+    </风格>
+</头>
+<身体>
+
+    <! -- 顶栏 -->
+    <页眉>
+        <div 班级="徽标">马苏<跨度>盒子</跨度></div>
+        <div 风格="font-size: 14px; color: var(--text-sub);">校园轻量化服务聚合应用</div>
+    </页眉>
+
+    <! -- 主介绍区 -->
+    <部分 班级="英雄">
+        <H1>马苏<跨度>盒子</跨度></H1>
+        <p>告别繁琐切换与重复跳转，深度整合校园高频刚需，带给你高效、流畅的一站式使用体验。</p>
+        
+        <！--双按钮：GitHub源码与蓝奏云下载-->
+        <div 班级="btn组">
+            <一个 href="https://henmo.lanzout.com/b00l33ogkj" 目标="_空白" 班级="下载-btn">蓝奏云高速下载</一个>
+            <一个 href="https://github.com/henmoGT/MASU-Box" 目标="_空白" 班级="github-btn">GitHub源码仓库</一个>
+        </div>
+    </部分>
+
+<! -- 功能亮点展示 -->
+    <部分 班级="功能">
+        <div 班级="功能卡">
+            <H3>🌐 校园网一键通</H3>
+            <p>支持内嵌网页浏览与高效的无感后台登录机制，告别反复跳转与手动认证，让联网一步到位。</p>
+        </div>
+        <div 班级="功能卡">
+            <H3>🗺️ 校园自定义地图</H3>
+            <p>基于 传单.JS 深度定制，通过精准的多点多维度坐标映射算法，实现轻量级、丝滑的校园精准导览。</p>
+        </div>
+        <div 班级="功能卡">
+            <H3>🚀   聚合服务舱</H3>
+            <p>高效聚合校园卡服务、扫码、共享单车一键开锁等日常刚需，真正做到即开即用、用完即走。</p>
+        </div>
+        <div 班级="功能卡">
+            <H3>📦 快捷身份码</H3>
+            <p>整合淘宝, 菜鸟、拼多多等主流平台的快递取件身份码入口，免去多 应用程序 切换烦恼，取件更高效。</p>
+        </div>
+        <div 班级="功能卡">
+            <H3>📚 教务与拓展服务</H3>
+            <p>提供便捷的教务系统访问入口。未来还将持续攻关智能课表自主导入功能，敬请期待。</p>
+        </div>
+        <div 班级="功能卡">
+            <H3>🎨 现代UI与个性化</H3>
+            <p>基于 Jetpack 构成 构建，支持全局深色/浅色模式切换与基于设备 ID 的极简专属账号体系。</p>
+        </div>
+    </部分>
+
+<! -- 底部下载锚点区域 -->
+    <div 风格="文本对齐：居中；填充：10px040px0；">
+        <一个 href="https://henmo.lanzout.com/b00l33ogkj" 目标="_空白" 班级="下载-btn">安卓安装包下载(蓝奏云)</一个>
+    </div>
+
+    <!-- 开发者与致谢 -->
+    <div 班级="学分-节">
+        <p><强大的>开发者：</强大的>痕墨</p>
+        <p><强大的>开源协议：</强大的>阿帕奇许可证2.0</p>
+        <p><强大的>特别鸣谢：</强大的>感谢Gemini、ChatGPT在开发过程中提供的协助与支持</p>
+    </div>
+
+    <! -- 页脚 -->
+    <页脚>
+        <p>&copy；2026MASU盒子项目。为校园生活设计。</p>
+    </页脚>
+
+</身体>
+</超文本标记语言>
