@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>马院汇 (MASU Box) - 你的专属一站式校园助手</title>
+    <title>马院汇 (MASU Box) - 校园生活与效率管理工具</title>
     <style>
         /* 定义日夜模式的 CSS 变量 */
         :root {
@@ -47,6 +47,8 @@
             align-items: center;
             padding: 20px 8%;
             border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 15px;
         }
         .logo {
             font-size: 20px;
@@ -54,6 +56,18 @@
             letter-spacing: 1px;
         }
         .logo span {
+            color: var(--accent-color);
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+        .nav-links a {
+            color: var(--text-sub);
+            text-decoration: none;
+        }
+        .nav-links a:hover {
             color: var(--accent-color);
         }
         /* 核心首屏区 */
@@ -115,12 +129,12 @@
         }
         /* 功能特性卡片区 */
         .features {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 50px auto 80px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
         }
         .feature-card {
             background: var(--card-bg);
@@ -146,7 +160,7 @@
         /* 开源致谢板块 */
         .credits-section {
             max-width: 600px;
-            margin: 0 auto 50px auto;
+            margin: 0 auto 30px auto;
             padding: 20px;
             text-align: center;
             font-size: 14px;
@@ -163,11 +177,69 @@
             color: var(--text-sub);
             font-size: 13px;
             border-top: 1px solid var(--border-color);
+            line-height: 1.8;
+        }
+        footer a {
+            color: var(--text-sub);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        footer a:hover {
+            color: var(--accent-color);
+        }
+        /* 模态框样式（用户协议） */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            margin: 10% auto;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            width: 80%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .close-btn {
+            color: var(--text-sub);
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-btn:hover {
+            color: var(--accent-color);
+        }
+        .modal-content h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .modal-content p, .modal-content ul {
+            font-size: 14px;
+            color: var(--text-sub);
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .modal-content ul {
+            padding-left: 20px;
         }
         /* 响应式微调 */
         @media (max-width: 600px) {
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
+            header { justify-content: center; }
         }
     </style>
 </head>
@@ -176,13 +248,18 @@
     <!-- 顶栏 -->
     <header>
         <div class="logo">马院汇 <span>(MASU Box)</span></div>
-        <div style="font-size: 14px; color: var(--text-sub);">校园轻量化服务聚合应用</div>
+        <div class="nav-links">
+            <a href="#features">核心功能</a>
+            <a href="https://github.com/henmoGT/MASU-Box" target="_blank">源码仓库</a>
+            <a href="javascript:void(0);" onclick="openModal()">用户协议</a>
+            <a href="#contact">联系方式</a>
+        </div>
     </header>
 
-    <!-- 主介绍区 -->
+    <!-- 主介绍区 (首页) -->
     <section class="hero">
         <h1>马院汇 <span>(MASU Box)</span></h1>
-        <p>告别繁琐切换与重复跳转，深度整合校园高频刚需，带给你高效、流畅的一站式使用体验。</p>
+        <p>专为校园生活打造的轻量化服务聚合应用，致力于将各类高频、零散的校园服务深度整合，带来高效流畅的一站式体验。</p>
         
         <!-- 双按钮：GitHub 源码与蓝奏云下载 -->
         <div class="btn-group">
@@ -191,31 +268,31 @@
         </div>
     </section>
 
-    <!-- 功能亮点展示 -->
-    <section class="features">
+    <!-- 功能亮点展示 (对应最新详细 README) -->
+    <section class="features" id="features">
         <div class="feature-card">
-            <h3>🌐 校园网连接助手</h3>
-            <p>内嵌网页浏览与高效的无感后台登录机制，支持一键连接与快速认证，让校园网联网一步到位。</p>
+            <h3>🌐 校园网一键通</h3>
+            <p><strong>内嵌网页与无感后台登录</strong>：告别繁琐的网页反复跳转与手动认证。支持高效后台登录机制，让校园网连接一步到位。</p>
         </div>
         <div class="feature-card">
-            <h3>🗺️ 校园自定义地图</h3>
-            <p>基于 Leaflet.js 深度定制，通过精准的多点多维度坐标映射算法，实现轻量级、丝滑的校园精准导览。</p>
+            <h3>🗺️ 校园地图导航</h3>
+            <p><strong>多点多维度坐标映射</strong>：基于 Leaflet.js 深度定制的校园专属地图，完美适配真实地理坐标与画布像素，实现轻量丝滑导览。</p>
         </div>
         <div class="feature-card">
-            <h3>🚀 校园应用聚合</h3>
-            <p>高效聚合学习通、今日校园、到梦空间、志愿汇等高频日常刚需，真正做到即开即用、用完即走。</p>
+            <h3>🚀 聚合服务舱</h3>
+            <p><strong>高频场景直达</strong>：高效聚合校园卡服务、快捷扫码、共享单车一键开锁等日常刚需，真正做到即开即用、用完即走。</p>
         </div>
         <div class="feature-card">
-            <h3>📦 快递与身份码聚合</h3>
-            <p>整合淘宝、拼多多身份码以及菜鸟驿站取件码入口，免去多 App 切换烦恼，取件更高效。</p>
+            <h3>📅 今日日程与待办</h3>
+            <p><strong>时间管理助手</strong>：内置日程与待办板块，帮助同学们高效规划每日安排、活动与个人琐事，告别遗忘与拖延。</p>
         </div>
         <div class="feature-card">
-            <h3>📅 日程与待办管理</h3>
-            <p>内置课程表、考试安排与随手记待办清单，科学规划大学每一天，告别遗忘与拖延。</p>
+            <h3>📦 快捷身份码</h3>
+            <p><strong>多平台一键出示</strong>：整合主流平台的快递取件身份码入口，免去多 App 切换的烦恼，取件高效便捷。</p>
         </div>
         <div class="feature-card">
-            <h3>🎨 现代 UI 与深色模式</h3>
-            <p>基于 Jetpack Compose 构建，完美支持全局深色/浅色模式切换与极简专属账号体系。</p>
+            <h3>🎨 现代 UI 与个性化</h3>
+            <p><strong>原生级视觉与隐私</strong>：基于 Jetpack Compose 构建，支持全局深色模式、设备 ID 极简账号体系及严密版本更新检查。</p>
         </div>
     </section>
 
@@ -226,15 +303,61 @@
 
     <!-- 开发者与致谢 -->
     <div class="credits-section">
+        <p><strong>应用名称：</strong> 马院汇 (MASU Box)</p>
         <p><strong>开发者：</strong> 痕墨</p>
         <p><strong>开源协议：</strong> Apache License 2.0</p>
         <p><strong>特别鸣谢：</strong> 感谢 Gemini、ChatGPT 在开发过程中提供的协助与支持</p>
     </div>
 
-    <!-- 页脚 -->
-    <footer>
-        <p>&copy; 2026 马院汇 (MASU Box) Project. Designed for Campus Life.</p>
+    <!-- 页脚 (包含版权、托管说明、联系方式等基础服务信息) -->
+    <footer id="contact">
+        <p>
+            <a href="javascript:void(0);" onclick="openModal()">用户协议与隐私声明</a> | 
+            <a href="https://github.com/henmoGT/MASU-Box" target="_blank">项目反馈 / GitHub Issues</a>
+        </p>
+        <p>联系方式：可通过 GitHub 仓库主页提交 Issue 或通过开源社区与开发者 <strong>痕墨</strong> 取得联系。</p>
+        <p>&copy; 2026 马院汇 (MASU Box) Project. 版权所有者：痕墨. All Rights Reserved.</p>
+        <p style="font-size: 12px; opacity: 0.8; margin-top: 5px;">
+            本站基于 GitHub Pages 构建并托管，属于开源个人单机项目。
+        </p>
     </footer>
 
+    <!-- 用户协议弹窗 -->
+    <div id="protocolModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>马院汇 (MASU Box) 用户协议及隐私政策</h2>
+            <p><strong>最后更新日期：2026年9月</strong></p>
+            <p>欢迎使用“马院汇 (MASU Box)”（以下简称“本软件”）。本软件是由开发者**痕墨**独立开发并开源的校园生活与效率管理单机工具。请您在使用本软件前仔细阅读以下条款：</p>
+            
+            <p><strong>1. 数据安全与隐私保护</strong></p>
+            <p>本软件采用纯本地存储设计，您的所有日程、待办、备忘录等个人数据均仅保存在您自己的设备本地，开发者不会收集、上传或将您的任何个人隐私数据用于商业用途。</p>
+
+            <p><strong>2. 知识产权与开源许可</strong></p>
+            <ul>
+                <li>本软件遵循 <strong>Apache License 2.0</strong> 开源协议发布。</li>
+                <li>“马院汇”及“MASU Box”之名称、UI 设计及相关文案著作权归开发者**痕墨**所有。</li>
+            </ul>
+
+            <p><strong>3. 免责声明</strong></p>
+            <p>本软件作为单机效率辅助工具免费提供，开发者不就因使用本软件所产生的任何数据丢失、设备故障等情况承担连带责任。请用户在使用重要数据时注意自行备份。</p>
+        </div>
+    </div>
+
+    <script>
+        // 弹窗控制逻辑
+        function openModal() {
+            document.getElementById('protocolModal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('protocolModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            var modal = document.getElementById('protocolModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
