@@ -1,6 +1,6 @@
 {
-  "latestVersionCode": 99,
-  "latestVersionName": "1.0.8",
+  "latestVersionCode": 7,
+  "latestVersionName": "1.0.4",
   "isForce": true,
   "desc": "【版本更新内容】\n• 将微信扫码与支付宝扫码合并为一个模块\n• 优化校园地图实时定位导航的精准度\n• 优化今日日程与待办功能\n• 优化校园应用聚合板块\n\n【其它注意事项】\n1. 请确保授予应用必要的网络及定位权限。\n2. 出于安全考虑，校园卡功能请在微信内访问链接\n3.由于未获取相关权限，小嘚出行目前仍不支持一键跳转\n4. 如有问题请移至常见问题界面",
   "url": "https://github.com/henmogt/MASU-Box/releases/latest"
